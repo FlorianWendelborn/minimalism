@@ -1,6 +1,6 @@
 {
   "name": "minimalism",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Cleans up the mess in your GitHub project root by allowing to move config files into package.json.",
   "main": "source/",
   "scripts": {

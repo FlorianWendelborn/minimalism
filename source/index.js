@@ -1,11 +1,13 @@
 #! /usr/bin/env node
 
-var packageJSON = require('./package.json');
 var fs = require('fs');
+var path = require('path');
+
+var packageJSON = require(path.join(process.cwd(), 'package.json'));
 
 if (packageJSON.minimalism) {
-	for (let name of Object.keys(packageJSON.minimalism)) {
-		let content = packageJSON.minimalism[name];
-		fs.writeFileSync(name, content);
+	for (var name in packageJSON.minimalism) {
+		var content = packageJSON.minimalism[name];
+		fs.writeFileSync(path.join(process.cwd(), name), content);
 	}
 }
