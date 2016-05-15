@@ -1,0 +1,39 @@
+{
+  "name": "minimalism",
+  "version": "0.0.1",
+  "description": "Cleans up the mess in your GitHub project root by allowing to move config files into package.json.",
+  "main": "source/",
+  "scripts": {
+    "test": "nyc mocha",
+    "postpublish": "PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag $PACKAGE_VERSION && git push --tags",
+    "start": "node source/",
+    "watch": "nodemon --watch source --exec \"npm run start --silent\"",
+    "watch-test": "nodemon --watch source --watch test --exec \"npm run test --silent\"",
+    "travis": "npm run test && nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dodekeract/smartflat-device.git"
+  },
+  "keywords": [
+    "cleanup",
+    "tidy",
+    "minimalistic",
+    "github",
+    "project",
+    "root",
+    "expand"
+  ],
+  "author": "Florian Wendelborn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dodekeract/smartflat-device/issues"
+  },
+  "homepage": "https://github.com/dodekeract/smartflat-device#readme",
+  "devDependencies": {
+    "coveralls": "^2.11.9",
+    "expect.js": "^0.3.1",
+    "mocha": "^2.4.5",
+    "nodemon": "^1.9.2"
+  }
+}
