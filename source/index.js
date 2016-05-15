@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 var packageJSON = require('./package.json');
 var fs = require('fs');
 

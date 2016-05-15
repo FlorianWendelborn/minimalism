@@ -1,6 +1,6 @@
 {
   "name": "minimalism",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Cleans up the mess in your GitHub project root by allowing to move config files into package.json.",
   "main": "source/",
   "scripts": {
@@ -10,6 +10,9 @@
     "watch": "nodemon --watch source --exec \"npm run start --silent\"",
     "watch-test": "nodemon --watch source --watch test --exec \"npm run test --silent\"",
     "travis": "npm run test && nyc report --reporter=text-lcov | coveralls"
+  },
+  "bin": {
+      "minimalism": "source/"
   },
   "repository": {
     "type": "git",
