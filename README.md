@@ -31,7 +31,7 @@ Cleans up the mess in your GitHub project root by allowing to move config files 
 ````json
 {
 	"scripts": {
-		"postinstall": "minimalism"
+		"postinstall": "node node_modules/minimalism/source"
 	}
 }
 ````
