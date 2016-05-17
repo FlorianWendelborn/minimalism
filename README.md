@@ -37,9 +37,3 @@ Cleans up the mess in your GitHub project root by allowing to move config files 
 ````
 
 4. `.gitignore` the unwanted config-files so they won't show up in your commits (tip: you can include your `.gitignore` in your `package.json`)
-
-## FAQ
-
-### Why is `build` published on GitHub? Isn't that redundant?
-
-It's needed for viewing the covered lines in coveralls, so I included it.
